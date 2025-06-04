@@ -173,5 +173,8 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-# Development
+# Development directories
 cache/
+
+# Dependency directories
+node_modules/
