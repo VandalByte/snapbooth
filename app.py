@@ -1,15 +1,22 @@
-import base64
 import io
 import json
 
 from fastapi import FastAPI, File, Form, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, Response
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 from PIL import Image
 
-from models.image_utils import add_image_border, add_image_filter, make_image_strip
+from models.image_utils import (
+    add_image_border,
+    add_image_filter,
+    make_image_strip,
+    pil_to_base64,
+)
 
 app = FastAPI()
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Configure CORS
 app.add_middleware(
@@ -21,11 +28,9 @@ app.add_middleware(
 )
 
 
-def pil_to_base64(image: Image.Image) -> str:
-    """Convert PIL image to base64 string"""
-    buffered = io.BytesIO()
-    image.save(buffered, format="JPEG")
-    return base64.b64encode(buffered.getvalue()).decode("utf-8")
+@app.get("/")
+async def serve_index():
+    return FileResponse("static/index.html")
 
 
 @app.post("/upload")

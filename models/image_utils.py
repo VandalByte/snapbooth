@@ -1,6 +1,15 @@
+import base64
+import io
+
 import pilgram
 from PIL import Image, ImageOps
 
+
+def pil_to_base64(image: Image.Image) -> str:
+    """Convert PIL image to base64 string"""
+    buffered = io.BytesIO()
+    image.save(buffered, format="JPEG")
+    return base64.b64encode(buffered.getvalue()).decode("utf-8")
 
 # NOTE: For images whose height and weight seems to differ,
 # the border width also differs, so prefer to use 1:1 image
