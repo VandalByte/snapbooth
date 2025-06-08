@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Snapbooth</title>
+    <link rel="icon" href="../static/images/snapbooth-logo.png" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.css" rel="stylesheet">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+</head>
+
+<body class="bg-[#2B3F46] text-[#F5F5F5]">
+    <header id="header" class="flex w-full h-14 justify-between items-center bg-[#1E2328] p-4">
+        <div id="logo">
+            <a target="_blank" href="https://github.com/VandalByte/snapbooth" class="flex items-center gap-x-3">
+                <img class="h-8" src="../static/images/snapbooth-logo.png" alt="Logo">
+                <span class="text-2xl md:text-4xl font-bold md:pb-1.5 tracking-wider">Snapbooth</span>
+            </a>
+        </div>
+        <div id="project-github-link">
+            <a target="_blank" href="https://github.com/VandalByte/snapbooth">
+                <img class="h-7" src="../static/images/github-logo.svg" alt="Github" />
+            </a>
+        </div>
+    </header>
+
+    <div class="w-full my-7" id="app">
+        <!-- Upload media section -->
+        <div class="bg-[#1E2328] w-[95%] md:w-[80%] mx-auto mt-6 px-4 py-4 rounded" id="upload-media">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4 text-center">
+                Snap or Upload!
+            </h1>
+
+            <form id="uploadForm" class="space-y-4">
+                <!-- Drag and Drop Area (Desktop only) -->
+                <div class="hidden md:block w-[80%] mx-auto border-2 border-dashed border-[#3f4a54] rounded-lg p-6 text-center cursor-pointer hover:bg-[#2B3F46]/50 transition-colors h-56"
+                    id="dropArea">
+                    <div class="flex flex-col items-center justify-center space-y-2 pt-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#FED255]" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                        <p class="text-lg font-medium">Drag & drop images here</p>
+                        <p class="text-sm text-gray-400">or click to browse files</p>
+                    </div>
+                    <input type="file" id="fileInput" accept="image/*" multiple class="hidden">
+                </div>
+
+                <!-- Capture and Add photo buttons (Mobile only) -->
+                <div class="md:hidden flex justify-center space-x-4">
+                    <label
+                        class="text-center py-2 px-4 rounded-lg border-2 border-[#F5B502] text-[#F5B502] font-semibold">
+                        Take Photo
+                        <input type="file" accept="image/*" capture="environment" class="hidden" id="cameraInput">
+                    </label>
+                    <label class="text-center py-2 px-4 rounded-lg bg-[#F5B502] text-black font-semibold">
+                        Add Photo
+                        <input type="file" accept="image/*" multiple class="hidden" id="galleryInput">
+                    </label>
+                </div>
+
+                <!-- Preview section -->
+                <div id="previewContainer" class="hidden">
+                    <div id="previewGrid" class="w-[80%] mx-auto grid grid-cols-3 gap-4 mt-4 relative">
+                        <!-- Preview images are added here -->
+                    </div>
+                    <div
+                        class="w-[80%] mx-auto text-center mt-4 text-sm font-semibold text-[#FED255] bg-[#2B3F46]/50 p-2 rounded-lg border border-[#FED255]/30">
+                        Tap or click the image to crop it.
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+
+        <!-- Tweaks section -->
+        <div class="bg-[#1E2328] w-[95%] md:w-[80%] mx-auto mt-6 px-4 py-4 rounded" id="tweaks">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4 text-center">
+                Tweaks
+            </h1>
+            <div class="space-y-4 md:w-[80%] mx-auto">
+                <label class="flex items-center space-x-3">
+                    <input checked id="want-border" type="checkbox"
+                        class="size-5 accent-[#F5B502] rounded-full outline-none" />
+                    <span>Add border to the photos?</span>
+                </label>
+                <label class="flex items-center space-x-3">
+                    <input id="want-single-strip" type="checkbox"
+                        class="size-5 accent-[#F5B502] rounded-full outline-none" />
+                    <span>Download photos as a single strip?</span>
+                </label>
+
+                <div>
+                    <label for="filter-style" class="block mb-2 text-sm font-medium text-[#F5B502]">Select an image
+                        filter
+                    </label>
+                    <select id="filter-style"
+                        class="w-full bg-[#2A2F35] border border-gray-600 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#FED255]">
+                        <option value="none">None</option>
+                        <option value="lofi">Lofi</option>
+                        <option value="sepia">Old Money</option>
+                        <option value="aden">Aden</option>
+                        <option value="moon">Black & White</option>
+                        <option value="toaster">Toaster</option>
+                        <option value="clarendon">Claredon</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit"
+                class="block w-[50%] md:w-[30%] mx-auto py-3 bg-[#3B4046] text-white hover:text-black rounded-lg text-lg font-semibold hover:bg-[#fed255]/90 transition-colors duration-300 mt-6">
+                Upload Images
+            </button>
+        </div>
+
+        <!-- Preview section -->
+        <div class="bg-[#1E2328] w-[95%] md:w-[80%] mx-auto mt-6 px-4 py-6 rounded" id="preview">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4 text-center">
+                Preview
+            </h1>
+            <canvas id="canvas" style="display:none;"></canvas>
+        </div>
+    </div>
+
+    <!-- Cropper modal -->
+    <div id="cropperModal"
+        class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-[#1E2328] rounded-lg p-4 w-full max-w-3xl">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold">Crop Image</h2>
+                <button id="closeCropper" class="text-[#FED255] hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1">
+                    <img id="imageToCrop" class="max-w-full max-h-[70vh]">
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <div class="w-32 h-32 border-2 border-[#FED255] mb-4 overflow-hidden">
+                        <img id="croppedPreview" class="w-full h-full object-cover">
+                    </div>
+                    <button id="applyCrop" class="bg-[#FED255] text-black px-4 py-2 rounded font-semibold">Apply
+                        Crop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#1E2328]" id="footer">
+        <div class="max-w-7xl mx-auto px-6 py-12 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center gap-2">
+                    <img class="h-6" src="../static/images/snapbooth-logo.png" alt="Logo">
+                    <h2 class="text-2xl md:text-3xl md:pb-1 font-bold">Snapbooth</h2>
+                </div>
+
+                <p class="mt-4 text-sm">
+                    Snapbooth lets you capture your best or weirdest selfies, slap on some
+                    filters, and get insta-ready photo strips faster than you can say Cheese!
+                </p>
+                <p class="mt-4 text-sm">Built with FastAPI, Tailwind CSS, and way too much coffee.</p>
+
+            </div>
+            <!-- Quick links section -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4 border-b border-[#3f4a54] md:pb-1">
+                    Quick Links
+                </h3>
+                <ul class="space-y-2">
+                    <li><a href="https://github.com/VandalByte/snapbooth" class="hover:underline"
+                            target="_blank">Project Repository</a></li>
+                    <li><a href="https://github.com/VandalByte/snapbooth" class="hover:underline"
+                            target="_blank">Documentation</a></li>
+                    <li><a href="https://github.com/VandalByte/snapbooth" class="hover:underline"
+                            target="_blank">License</a></li>
+                    <li><a href="https://github.com/VandalByte/snapbooth" class="hover:underline"
+                            target="_blank">Development</a></li>
+                </ul>
+            </div>
+            <!-- Social section -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4 border-b border-[#3f4a54] md:pb-1">
+                    Connect
+                </h3>
+                <div class="flex space-x-4">
+                    <a href="https://x.com/VandalByte" target="_blank">
+                        <img class="h-8 w-auto" src="../static/images/x-logo-white.png" alt="X logo" />
+                    </a>
+                    <a href="https://github.com/VandalByte/snapbooth" target="_blank">
+                        <img class="h-8 w-auto" src="../static/images/github-logo.svg" alt="Github logo" />
+                    </a>
+                    <a href="https://www.reddit.com/user/VandalByte/" target="_blank">
+                        <img class="h-8 w-auto" src="../static/images/reddit-logo.png" alt="Reddit logo" />
+                    </a>
+                    <a href="https://ko-fi.com/VandalByte" target="_blank">
+                        <img class="h-8 w-auto" src="../static/images/kofi-logo.png" alt="Kofi logo" />
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="border-t border-[#3f4a54] text-center py-4 text-sm" id="bottom-bar">
+            © 2025 Snapbooth. Built with ❤️ by <a href="https://github.com/VandalByte"
+                class="underline hover:text-white">VandalByte</a>.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.js"></script>
+    <script src="../static/js/script.js"></script>
+
+</body>
+
+</html>
