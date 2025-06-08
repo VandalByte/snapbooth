@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append('tweaks', JSON.stringify(tweaks));
 
             // Send to the FastAPI backend
-            const response = await fetch('http://localhost:8000/upload', {
+            const response = await fetch('https://snapbooth.onrender.com/upload', {
                 method: 'POST',
                 body: formData
             });
