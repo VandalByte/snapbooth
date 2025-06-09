@@ -3,10 +3,10 @@
 </p>
 
 
-[**Snapbooth**](https://snapbooth.onrender.com) lets you capture your best or weirdest selfies, add filters, and create Instagram-ready photobooth-style pictures faster than you can say Cheese!
+[**Snapbooth**](https://snapbooth.onrender.com) lets you capture your best or weirdest selfies, add filters, and create Instagram-ready photobooth-style pictures faster than you can say Cheese!  See the demo [here](https://github.com/VandalByte/snapbooth?tab=readme-ov-file#-demo).
 
 **Contributions are always welcome!** Check out the [CONTRIBUTING guide](https://github.com/VandalByte/snapbooth/blob/main/.github/CONTRIBUTING.md) to get started.
-If you found this project useful and fun, consider giving it a ⭐ it really helps boost my motivation! 🤗 See the demo [here](https://github.com/VandalByte/snapbooth?tab=readme-ov-file#-demo).
+If you found this project useful and fun, consider giving it a ⭐ it really helps boost my motivation! 🤗
 
 Found a bug 🪲 or have a feature request 🧩? Open an [issue](https://github.com/VandalByte/snapbooth/issues/new) and let me know!
 
