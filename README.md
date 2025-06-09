@@ -6,7 +6,7 @@
 [**Snapbooth**](https://snapbooth.onrender.com) lets you capture your best or weirdest selfies, add filters, and create Instagram-ready photobooth-style pictures faster than you can say Cheese!
 
 **Contributions are always welcome!** Check out the [CONTRIBUTING guide](https://github.com/VandalByte/snapbooth/blob/main/.github/CONTRIBUTING.md) to get started.
-If you found this project useful and fun, consider giving it a ⭐ it really helps boost my motivation! 🤗 See the demo [here](https://github.com/VandalByte/snapbooth?tab=readme-ov-file#-demo).
+If you found this project useful and fun, consider giving it a ⭐ it really helps boost my motivation! 🤗 See the demo [here](https://github.com/VandalByte/snapbooth?tab=readme-ov-file#demo).
 
 Found a bug 🪲 or have a feature request 🧩? Open an [issue](https://github.com/VandalByte/snapbooth/issues/new) and let me know!
 
@@ -32,7 +32,7 @@ These are the currently supported filters. More exciting filters will be added l
 |![Lofi](https://raw.githubusercontent.com/VandalByte/snapbooth/main/media/filters/lofi.jpg)|![Old money](https://raw.githubusercontent.com/VandalByte/snapbooth/main/media/filters/old-money.jpg)|![Toaster](https://raw.githubusercontent.com/VandalByte/snapbooth/main/media/filters/toaster.jpg)|
 |**Lofi**|**Old Money**|**Toaster**|
 
-## Demo
+## 🎬 Demo
 https://github.com/user-attachments/assets/3f9727cc-2875-4575-a7df-0d0dc8c3d000
 
 
