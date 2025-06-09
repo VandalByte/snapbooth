@@ -6,9 +6,10 @@
 [**Snapbooth**](https://snapbooth.onrender.com) lets you capture your best or weirdest selfies, add filters, and create Instagram-ready photobooth-style pictures faster than you can say Cheese!
 
 **Contributions are always welcome!** Check out the [CONTRIBUTING guide](https://github.com/VandalByte/snapbooth/blob/main/.github/CONTRIBUTING.md) to get started.
-If you found this project useful and fun, consider giving it a ⭐ it really helps boost my motivation! 🤗
+If you found this project useful and fun, consider giving it a ⭐ it really helps boost my motivation! 🤗 See the demo [here](https://github.com/VandalByte/snapbooth?tab=readme-ov-file#-demo).
 
 Found a bug 🪲 or have a feature request 🧩? Open an [issue](https://github.com/VandalByte/snapbooth/issues/new) and let me know!
+
 
 ## ✨ Features
 - Snap a selfie or upload an image, both options supported.
@@ -20,7 +21,6 @@ Found a bug 🪲 or have a feature request 🧩? Open an [issue](https://github.
 > This project is hosted on Render's free tier (since $7 a month is a bit much for selfies 😅), so it might nap occasionally 😴 
 > If the site doesn't load right away, give it a moment or a gentle refresh!
 
-https://github.com/user-attachments/assets/f8342dac-5b48-4932-86b4-97a4ed0b0be7
 
 ## 🔥 Snapbooth Filters
 These are the currently supported filters. More exciting filters will be added later on.
@@ -31,6 +31,9 @@ These are the currently supported filters. More exciting filters will be added l
 |**Aden**|**Black & White**|**Clarendon**|
 |![Lofi](https://raw.githubusercontent.com/VandalByte/snapbooth/main/media/filters/lofi.jpg)|![Old money](https://raw.githubusercontent.com/VandalByte/snapbooth/main/media/filters/old-money.jpg)|![Toaster](https://raw.githubusercontent.com/VandalByte/snapbooth/main/media/filters/toaster.jpg)|
 |**Lofi**|**Old Money**|**Toaster**|
+
+## Demo
+https://github.com/user-attachments/assets/3f9727cc-2875-4575-a7df-0d0dc8c3d000
 
 
 ## 🧪 License
