@@ -241,14 +241,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // Display processed images
             displayProcessedImages(result.processed_images, result.is_strip);
 
-            // Reset after upload
-            selectedFiles = [];
-            croppedFiles = {};
-            updatePreview();
-            fileInput.value = '';
-            galleryInput.value = '';
-            cameraInput.value = '';
-
         } catch (error) {
             console.error('Upload error:', error);
             showAlert("An error occurred during upload. Please try again.");
