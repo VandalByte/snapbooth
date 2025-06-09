@@ -20,6 +20,8 @@ Found a bug 🪲 or have a feature request 🧩? Open an [issue](https://github.
 > This project is hosted on Render's free tier (since $7 a month is a bit much for selfies 😅), so it might nap occasionally 😴 
 > If the site doesn't load right away, give it a moment or a gentle refresh!
 
+https://github.com/user-attachments/assets/f8342dac-5b48-4932-86b4-97a4ed0b0be7
+
 ## 🔥 Snapbooth Filters
 These are the currently supported filters. More exciting filters will be added later on.
 
